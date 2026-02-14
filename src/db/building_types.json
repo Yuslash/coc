@@ -1,0 +1,20 @@
+{
+    "TownHall": {
+        "width": 2,
+        "height": 2,
+        "color": "#3498db",
+        "maxCount": 1
+    },
+    "Barracks": {
+        "width": 2,
+        "height": 2,
+        "color": "#e67e22",
+        "maxCount": 1
+    },
+    "ArmyCamp": {
+        "width": 2,
+        "height": 2,
+        "color": "#9b59b6",
+        "maxCount": 4
+    }
+}

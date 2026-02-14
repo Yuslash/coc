@@ -1,0 +1,70 @@
+/* Existing InfoModal styles... */
+
+/* Troop List Styles */
+.troop-list-section {
+    margin-top: 15px;
+    border-top: 1px solid #bdc3c7;
+    padding-top: 10px;
+}
+
+.troop-list-section h3 {
+    font-size: 14px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.troop-list {
+    max-height: 150px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.troop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ecf0f1;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #bdc3c7;
+}
+
+.troop-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.troop-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.troop-info span {
+    font-size: 13px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.remove-troop-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.remove-troop-btn:hover {
+    background: #c0392b;
+}

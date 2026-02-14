@@ -1,0 +1,10 @@
+[
+    {
+        "id": "town-hall-1",
+        "type": "TownHall",
+        "x": 9,
+        "y": 9,
+        "width": 2,
+        "height": 2
+    }
+]
