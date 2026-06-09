@@ -1,5 +1,5 @@
 import React from 'react';
-import { UNIT_TYPES } from '../hooks/useUnitSystem';
+import { UNIT_TYPES, UNIT_AVATARS } from '../hooks/useUnitSystem';
 import type { UnitType, QueuedUnit } from '../hooks/useUnitSystem';
 import { X, Clock, Users, Zap, Hourglass } from 'lucide-react';
 
@@ -86,10 +86,14 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
                                         <div className={`absolute inset-0 bg-gradient-to-b from-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}></div>
 
                                         <div
-                                            className="w-16 h-16 rounded-xl border border-white/20 shadow-lg flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform duration-300"
-                                            style={{ backgroundColor: config.color, boxShadow: `0 0 15px ${config.color}60` }}
+                                            className="w-16 h-16 rounded-xl border border-white/20 shadow-lg flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform duration-300 overflow-hidden"
+                                            style={{ boxShadow: `0 0 15px ${config.color}60` }}
                                         >
-                                            {/* Placeholder for unit icon */}
+                                            <img
+                                                src={UNIT_AVATARS[type]}
+                                                alt={type}
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
 
                                         <div className="text-center relative z-10 w-full">
@@ -177,9 +181,14 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
                                     </div>
 
                                     <div
-                                        className="w-10 h-10 rounded-lg shrink-0 z-10 border border-white/10 shadow-sm"
-                                        style={{ backgroundColor: UNIT_TYPES[group.type].color }}
-                                    ></div>
+                                        className="w-10 h-10 rounded-lg shrink-0 z-10 border border-white/10 shadow-sm overflow-hidden"
+                                    >
+                                        <img
+                                            src={UNIT_AVATARS[group.type]}
+                                            alt={group.type}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
 
                                     <div className="flex-1 flex flex-col justify-center z-10 font-rajdhani min-w-0">
                                         <span className="font-bold text-slate-200 truncate">{group.type}</span>

@@ -10,7 +10,7 @@ import { VictoryModal } from './VictoryModal';
 import { HealthBar } from './HealthBar'; // Import
 import { usePanZoom } from '../hooks/usePanZoom';
 import { useBuildingSystem, BUILDINGS } from '../hooks/useBuildingSystem';
-import { useUnitSystem, UNIT_TYPES } from '../hooks/useUnitSystem';
+import { useUnitSystem, UNIT_AVATARS } from '../hooks/useUnitSystem';
 import { useCombatSystem } from '../hooks/useCombatSystem';
 import type { BuildingType, BuildingData } from '../hooks/useBuildingSystem';
 import type { WalkingUnit, UnitType } from '../hooks/useUnitSystem';
@@ -213,12 +213,17 @@ export const World: React.FC = () => {
                 <div className="relative">
                     <div className="absolute top-0 left-[-8px] w-4 h-2 bg-black/30 rounded-full blur-[1px]"></div>
                     <div
-                        className="w-4 h-4 rounded-full border border-white shadow-sm"
+                        className="w-6 h-6 rounded-full border border-white shadow-md overflow-hidden flex items-center justify-center bg-slate-800"
                         style={{
-                            backgroundColor: UNIT_TYPES[unit.type].color,
-                            transform: 'translateY(-10px)'
+                            transform: 'translateY(-12px)'
                         }}
-                    ></div>
+                    >
+                        <img
+                            src={UNIT_AVATARS[unit.type]}
+                            alt={unit.type}
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
                 </div>
             </div>
         );
@@ -446,7 +451,13 @@ export const World: React.FC = () => {
                                         selectedTroopToDeploy === type ? 'border-amber-400 bg-amber-900/30 scale-110' : 'border-slate-600 bg-slate-800 hover:border-slate-400'}
                                 `}
                             >
-                                <div className="w-10 h-10 rounded-full border border-white/20 shadow-lg" style={{ backgroundColor: UNIT_TYPES[type as UnitType].color }}></div>
+                                <div className="w-10 h-10 rounded-full border border-white/20 shadow-lg overflow-hidden flex items-center justify-center">
+                                    <img
+                                        src={UNIT_AVATARS[type as UnitType]}
+                                        alt={type}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
                                 <span className="text-[10px] font-bold text-white uppercase mt-0.5">{type}</span>
                                 <span className={`absolute -top-2 -right-2 text-[11px] font-bold px-1.5 py-0.5 rounded-full ${remaining > 0 ? 'bg-emerald-500 text-white' : 'bg-red-600 text-white'}`}>
                                     {remaining}

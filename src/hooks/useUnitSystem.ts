@@ -1,7 +1,14 @@
 import { useState, useCallback, useEffect } from 'react';
 import type { BuildingData } from './useBuildingSystem';
+import barbarianImg from '../assets/barbarian.png';
+import archerImg from '../assets/archer.png';
 
 export type UnitType = 'Barbarian' | 'Archer';
+
+export const UNIT_AVATARS: Record<UnitType, string> = {
+    Barbarian: barbarianImg,
+    Archer: archerImg
+};
 
 export interface UnitConfig {
     size: number;

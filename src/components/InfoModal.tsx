@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import type { BuildingData } from '../hooks/useBuildingSystem';
 import { BUILDINGS } from '../hooks/useBuildingSystem';
 import type { UnitData, UnitType } from '../hooks/useUnitSystem';
-import { UNIT_TYPES } from '../hooks/useUnitSystem';
+import { UNIT_TYPES, UNIT_AVATARS } from '../hooks/useUnitSystem';
 import { X, Heart, Ruler, Castle, Swords, Pickaxe, Tent, Shield, Users, Hammer, ArrowUpCircle } from 'lucide-react';
 
 interface InfoModalProps {
@@ -148,9 +148,13 @@ export const InfoModal: React.FC<InfoModalProps> = ({ building, onClose, units =
                                             >
                                                 <div className="flex items-center gap-3 relative z-10">
                                                     <div
-                                                        className="w-10 h-10 rounded-lg shadow-sm flex items-center justify-center text-[10px] ring-1 ring-white/10 relative"
-                                                        style={{ backgroundColor: unitConfig.color }}
+                                                        className="w-10 h-10 rounded-lg shadow-sm flex items-center justify-center text-[10px] ring-1 ring-white/10 relative overflow-hidden"
                                                     >
+                                                        <img
+                                                            src={UNIT_AVATARS[type]}
+                                                            alt={type}
+                                                            className="w-full h-full object-cover"
+                                                        />
                                                         <span className="absolute -top-2 -right-2 bg-amber-500 text-slate-900 text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-slate-900 shadow-sm z-20">
                                                             x{count}
                                                         </span>
