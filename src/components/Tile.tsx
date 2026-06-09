@@ -43,7 +43,7 @@ export const Tile: React.FC<TileProps> = React.memo(({ x, y, isSelected, onClick
           But we can override here if needed for dynamic content like buildings.
       */}
             <img
-                src="/grass3.png"
+                src={`${import.meta.env.BASE_URL}grass3.png`}
                 alt="grass"
                 style={{
                     width: '100%',

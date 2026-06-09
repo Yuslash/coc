@@ -251,7 +251,7 @@ export const World: React.FC = () => {
                         left: -950, // (0 - 19) * 50
                         width: 2000, // 20 * 100
                         height: 1000, // 20 * 50
-                        backgroundImage: 'url("/gras2.png")',
+                        backgroundImage: `url("${import.meta.env.BASE_URL}gras2.png")`,
                         backgroundPosition: 'center', // Centers the image within the diamond
                         backgroundSize: 'cover', // Match tile size for seamless look if aligned
                         clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',

@@ -36,7 +36,7 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({ isOpen, onReturnHome
                     className="relative bg-slate-900 border border-amber-500/30 p-1 rounded-3xl shadow-[0_0_50px_rgba(245,158,11,0.3)] w-[450px] overflow-hidden animate-in zoom-in-95 duration-500"
                 >
                     {/* Background Pattern */}
-                    <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
+                    <div className="absolute inset-0 opacity-5" style={{ backgroundImage: `url('${import.meta.env.BASE_URL}pattern.png')` }}></div>
 
                     {/* Content Container */}
                     <div className="relative bg-slate-900/90 backdrop-blur-xl rounded-[20px] p-8 flex flex-col items-center">

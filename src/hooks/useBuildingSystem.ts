@@ -21,6 +21,8 @@ type BuildingConfig = {
 };
 
 // Use the JSON data directly
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 export const BUILDINGS: Record<string, BuildingConfig> = {
     TownHall: {
         width: 2,
@@ -29,7 +31,7 @@ export const BUILDINGS: Record<string, BuildingConfig> = {
         maxCount: 1,
         maxHp: 1000,
         texture: {
-            src: '/town_hall.png',
+            src: `${BASE_URL}town_hall.png`,
             width: 200,
             height: 200,
             offsetX: -100,
@@ -43,7 +45,7 @@ export const BUILDINGS: Record<string, BuildingConfig> = {
         maxCount: 1,
         maxHp: 500,
         texture: {
-            src: '/grasslessbarracks.png',
+            src: `${BASE_URL}grasslessbarracks.png`,
             width: 200,
             height: 200,
             offsetX: -100,
@@ -53,7 +55,7 @@ export const BUILDINGS: Record<string, BuildingConfig> = {
     ArmyCamp: {
         width: 2, height: 2, color: '#9b59b6', maxCount: 4, maxHp: 400
         , texture: {
-            src: '/armycamp.png',
+            src: `${BASE_URL}armycamp.png`,
             width: 200,
             height: 200,
             offsetX: -100,
@@ -63,7 +65,7 @@ export const BUILDINGS: Record<string, BuildingConfig> = {
     Cannon: {
         width: 2, height: 2, color: '#2c3e50', maxCount: 3, maxHp: 800,
         texture: {
-            src: '/cannon.png',
+            src: `${BASE_URL}cannon.png`,
             width: 155,
             height: 155,
             offsetX: -75,
